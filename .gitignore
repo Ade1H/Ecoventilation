@@ -24,3 +24,13 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Frontend node_modules
+frontend/node_modules/
+
+# Backend node_modules
+backend/node_modules/
+
+# Build outputs
+frontend/dist/
+backend/dist/
