@@ -1,42 +1,57 @@
 // src/pages/Contact.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Contact.css";
 
 export default function Contact() {
   const [statusMessage, setStatusMessage] = useState("");
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  useEffect(() => {
+    // Set page title
+    document.title = "Kontakta oss | Ecoventilation";
 
-  const data = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    phone: e.target.phone.value,
-    service: e.target.service.value,
-    message: e.target.message.value,
-  };
+    // Set meta description dynamically
+    const meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content =
+      "Kontakta Ecoventilation för ventilationsservice, avloppsservice och centraldammsugare. Fyll i formuläret eller ring oss direkt för snabb hjälp.";
+    document.head.appendChild(meta);
 
-  try {
-    const response = await fetch("http://localhost:5000/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
 
-    if (response.ok) {
-      alert("Tack för ditt meddelande! Vi återkommer så snart som möjligt.");
-      e.target.reset();
-    } else {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      service: e.target.service.value,
+      message: e.target.message.value,
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Tack för ditt meddelande! Vi återkommer så snart som möjligt.");
+        e.target.reset();
+      } else {
+        alert("Något gick fel. Försök igen senare.");
+      }
+    } catch (error) {
+      console.error(error);
       alert("Något gick fel. Försök igen senare.");
     }
-  } catch (error) {
-    console.error(error);
-    alert("Något gick fel. Försök igen senare.");
-  }
-};
-
+  };
 
   return (
     <div className="contact-page">

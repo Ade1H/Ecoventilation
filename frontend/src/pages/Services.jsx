@@ -1,32 +1,56 @@
 // pages/Services.jsx
+import { useEffect } from 'react';
 import ServiceCard from '../components/ServiceCard';
 import './Services.css';
 
 export default function Services() {
+  useEffect(() => {
+    // Set page title
+    document.title = "Våra Tjänster | Ecoventilation";
+
+    // Set meta description dynamically
+    const meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content =
+      "Utforska Ecoventilations professionella tjänster: ventilation, avlopp, centraldammsugare, elservice och mer för hem och företag i Sverige.";
+    document.head.appendChild(meta);
+
+    // Cleanup on unmount
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
   const services = [
     {
-      title: "Ventilationsservice",
-      description: "Regelbunden rengöring och underhåll av ventilationssystemet för att säkerställa god inomhusluftkvalitet och förhindra problem som dålig luftkvalitet och mögel."
+      title: "Rensning imkanal",
+      description:
+        "Imkanal är den kanal som går från spisfläkten. Imkanal är en ventilationskanal som ska föra bort luft från ett utrymme där du lagar mat. Med tiden samlas flott och fett som uppstår vid matlagning vilket ökar risken för en brand."
     },
     {
-      title: "Avloppsservice",
-      description: "Vi löser alla typer av avloppsproblem, från akuta stopp till förebyggande underhåll. Vårt mål är att säkerställa att ditt avloppssystem fungerar optimalt."
+      title: "Rensning frånluft",
+      description:
+        "Frånluftsventilation är en typ av ventilationssystem där luften avlägsnas från ett rum och leds ut genom en kanal. Detta skapar ett undertryck som drar in frisk luft från andra öppningar i byggnaden. Det är vanligt i bostäder och andra byggnader och hjälper till att hålla luften fräsch och hälsosam."
     },
     {
-      title: "Centraldammsugare",
-      description: "Fullständig service av centraldammsugare inklusive byte av dammsugarpåse, rengöring av filter och munstycken samt kontroll av slangar och rör."
+      title: "Rensning tilluft",
+      description:
+        "Tilluft är den luft som tillförs en byggnad eller ett utrymme för att ventilera och reglera temperaturen. Tilluft i en bostad är viktigt för att hålla en god inomhusluftkvalitet och för att skapa en behaglig atmosfär."
     },
     {
-      title: "Paketrens",
-      description: "Attraktiva pakettjänster som ger dig möjlighet att spara pengar. Våra paket är utformade för att passa olika behov och budgetar."
+      title: "Rensning luft luft",
+      description:
+        "En luftvärmepump ser oftast ut som en rektangulär enhet som monteras på en vägg eller ställs på marken utanför huset. Den har vanligtvis ett antal ventilationsöppningar på framsidan och kan variera i storlek beroende på modell och kapacitet."
     },
     {
-      title: "Kyl & Frysservice",
-      description: "Service och reparation av kyl- och frysutrustning för att säkerställa optimal prestanda och energiförbrukning."
+      title: "FTX/värmeväxlare",
+      description:
+        "Med fläktsystem som styr både till- och frånluften. Då systemet kopplas till värmeåtervinning kallas det FTX-system (X för återvinning av den varma inneluften) Om du har en fastighet med den här typen av värmeåtervinning så bör du också ha en plan för rengöring av FTX-Ventilation och byta filter regelbundet."
     },
     {
-      title: "Elservice",
-      description: "Certifierade elektriker som hjälper dig med installationer, felsökning och underhåll av elektriska system i hemmet."
+      title: "Centraldamsugare",
+      description:
+        "En centraldammsugare är en smart och effektiv lösning för att hålla ditt hem rent och fritt från damm och smuts. Men för att den ska fortsätta fungera optimalt är det viktigt att genomföra regelbundet underhåll. Att investera tid och resurser i att regelbundet kontrollera och underhålla centralldammsugaren lönar sig i längden."
     }
   ];
 

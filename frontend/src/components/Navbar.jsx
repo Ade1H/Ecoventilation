@@ -46,6 +46,12 @@ export default function Navbar() {
         <li>
           <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Kontakt</Link>
         </li>
+        <li>
+          <Link to="/careers" onClick={() => setIsMenuOpen(false)}>kariär</Link>
+        </li>
+        <li>
+          <Link to="/about" onClick={() => setIsMenuOpen(false)}>om</Link>
+        </li>
       </ul>
     </nav>
   );

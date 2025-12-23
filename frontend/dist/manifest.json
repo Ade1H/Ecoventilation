@@ -1,0 +1,20 @@
+{
+  "name": "Ecoventilation",
+  "short_name": "Ecoventilation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007BFF",
+  "icons": [
+    {
+      "src": "/assets/image/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/image/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
