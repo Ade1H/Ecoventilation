@@ -2,20 +2,23 @@
 import { useEffect } from 'react';
 import ServiceCard from '../components/ServiceCard';
 import './Services.css';
+import ImkanalImage from "../assets/image/Immkanal.jpg"; // Kontrollera stavningen på filnamnet
+import franluftImage from "../assets/image/Franluft.jpg"; // Exempel, importera fler bilder om du vill
+import TilLuft from "../assets/image/TillLuft.jpg"; // Exempel, importera fler bilder om du vill
+import LuftLuft from "../assets/image/LuftLuft.jpg"; // Exempel, importera fler bilder om du vill
+import Ftx from "../assets/image/ftx.png"; // Exempel, importera fler bilder om du vill
+import CentralDamsugare from "../assets/image/CentralDamsugare.png"; // Exempel, importera fler bilder om du vill
 
 export default function Services() {
   useEffect(() => {
-    // Set page title
     document.title = "Våra Tjänster | Ecoventilation";
 
-    // Set meta description dynamically
     const meta = document.createElement("meta");
     meta.name = "description";
     meta.content =
       "Utforska Ecoventilations professionella tjänster: ventilation, avlopp, centraldammsugare, elservice och mer för hem och företag i Sverige.";
     document.head.appendChild(meta);
 
-    // Cleanup on unmount
     return () => {
       document.head.removeChild(meta);
     };
@@ -25,32 +28,38 @@ export default function Services() {
     {
       title: "Rensning imkanal",
       description:
-        "Imkanal är den kanal som går från spisfläkten. Imkanal är en ventilationskanal som ska föra bort luft från ett utrymme där du lagar mat. Med tiden samlas flott och fett som uppstår vid matlagning vilket ökar risken för en brand."
+        "Imkanal är den kanal som går från spisfläkten. Imkanal är en ventilationskanal som ska föra bort luft från ett utrymme där du lagar mat. Med tiden samlas flott och fett som uppstår vid matlagning vilket ökar risken för en brand.",
+      image: ImkanalImage
     },
     {
       title: "Rensning frånluft",
       description:
-        "Frånluftsventilation är en typ av ventilationssystem där luften avlägsnas från ett rum och leds ut genom en kanal. Detta skapar ett undertryck som drar in frisk luft från andra öppningar i byggnaden. Det är vanligt i bostäder och andra byggnader och hjälper till att hålla luften fräsch och hälsosam."
+        "Frånluftsventilation är en typ av ventilationssystem där luften avlägsnas från ett rum och leds ut genom en kanal. Detta skapar ett undertryck som drar in frisk luft från andra öppningar i byggnaden. Det är vanligt i bostäder och andra byggnader och hjälper till att hålla luften fräsch och hälsosam.",
+      image: franluftImage
     },
     {
       title: "Rensning tilluft",
       description:
-        "Tilluft är den luft som tillförs en byggnad eller ett utrymme för att ventilera och reglera temperaturen. Tilluft i en bostad är viktigt för att hålla en god inomhusluftkvalitet och för att skapa en behaglig atmosfär."
+        "Tilluft är den luft som tillförs en byggnad eller ett utrymme för att ventilera och reglera temperaturen. Tilluft i en bostad är viktigt för att hålla en god inomhusluftkvalitet och för att skapa en behaglig atmosfär.",
+      image: TilLuft
     },
     {
       title: "Rensning luft luft",
       description:
-        "En luftvärmepump ser oftast ut som en rektangulär enhet som monteras på en vägg eller ställs på marken utanför huset. Den har vanligtvis ett antal ventilationsöppningar på framsidan och kan variera i storlek beroende på modell och kapacitet."
+        "En luftvärmepump ser oftast ut som en rektangulär enhet som monteras på en vägg eller ställs på marken utanför huset. Den har vanligtvis ett antal ventilationsöppningar på framsidan och kan variera i storlek beroende på modell och kapacitet.",
+      image: LuftLuft
     },
     {
       title: "FTX/värmeväxlare",
       description:
-        "Med fläktsystem som styr både till- och frånluften. Då systemet kopplas till värmeåtervinning kallas det FTX-system (X för återvinning av den varma inneluften) Om du har en fastighet med den här typen av värmeåtervinning så bör du också ha en plan för rengöring av FTX-Ventilation och byta filter regelbundet."
+        "Med fläktsystem som styr både till- och frånluften. Då systemet kopplas till värmeåtervinning kallas det FTX-system (X för återvinning av den varma inneluften) Om du har en fastighet med den här typen av värmeåtervinning så bör du också ha en plan för rengöring av FTX-Ventilation och byta filter regelbundet.",
+      image: Ftx
     },
     {
       title: "Centraldamsugare",
       description:
-        "En centraldammsugare är en smart och effektiv lösning för att hålla ditt hem rent och fritt från damm och smuts. Men för att den ska fortsätta fungera optimalt är det viktigt att genomföra regelbundet underhåll. Att investera tid och resurser i att regelbundet kontrollera och underhålla centralldammsugaren lönar sig i längden."
+        "En centraldammsugare är en smart och effektiv lösning för att hålla ditt hem rent och fritt från damm och smuts. Men för att den ska fortsätta fungera optimalt är det viktigt att genomföra regelbundet underhåll. Att investera tid och resurser i att regelbundet kontrollera och underhålla centralldammsugaren lönar sig i längden.",
+      image: CentralDamsugare
     }
   ];
 
@@ -71,6 +80,7 @@ export default function Services() {
               key={index}
               title={service.title}
               description={service.description}
+              image={service.image}
             />
           ))}
         </div>

@@ -4,6 +4,9 @@ import HeroCarousel from '../components/HeroCarousel';
 import ServiceCard from '../components/ServiceCard';
 import './Home.css';
 
+import ImkanalImage from "../assets/image/Immkanal.jpg"; // Kontrollera stavningen på filnamnet
+import franluftImage from "../assets/image/Franluft.jpg"; // Exempel, importera fler bilder om du vill
+import TilLuft from "../assets/image/TillLuft.jpg";
 // Import your images if they are in src/assets
 import serviceImage1 from '../assets/image/herobildA.png';
 import serviceImage2 from '../assets/image/ftx.png';
@@ -28,21 +31,25 @@ export default function Home() {
   }, []);
 
   const services = [
-    {
-      title: "Rensning imkanal",
-      description:
-        "Imkanal är den kanal som går från spisfläkten. Imkanal är en ventilationskanal som ska föra bort luft från ett utrymme där du lagar mat. Med tiden samlas flott och fett som uppstår vid matlagning vilket ökar risken för en brand."
-    },
-    {
-      title: "Rensning frånluft",
-      description:
-        "Frånluftsventilation är en typ av ventilationssystem där luften avlägsnas från ett rum och leds ut genom en kanal. Detta skapar ett undertryck som drar in frisk luft från andra öppningar i byggnaden. Det är vanligt i bostäder och andra byggnader och hjälper till att hålla luften fräsch och hälsosam."
-    },
-    {
-      title: "Rensning tilluft",
-      description:
-        "Tilluft är den luft som tillförs en byggnad eller ett utrymme för att ventilera och reglera temperaturen. Tilluft i en bostad är viktigt för att hålla en god inomhusluftkvalitet och för att skapa en behaglig atmosfär."
-    },
+    
+     {
+        title: "Rensning imkanal",
+        description:
+          "Imkanal är den kanal som går från spisfläkten. Imkanal är en ventilationskanal som ska föra bort luft från ett utrymme där du lagar mat. Med tiden samlas flott och fett som uppstår vid matlagning vilket ökar risken för en brand.",
+        image: ImkanalImage
+      },
+      {
+        title: "Rensning frånluft",
+        description:
+          "Frånluftsventilation är en typ av ventilationssystem där luften avlägsnas från ett rum och leds ut genom en kanal. Detta skapar ett undertryck som drar in frisk luft från andra öppningar i byggnaden. Det är vanligt i bostäder och andra byggnader och hjälper till att hålla luften fräsch och hälsosam.",
+        image: franluftImage
+      },
+      {
+        title: "Rensning tilluft",
+        description:
+          "Tilluft är den luft som tillförs en byggnad eller ett utrymme för att ventilera och reglera temperaturen. Tilluft i en bostad är viktigt för att hålla en god inomhusluftkvalitet och för att skapa en behaglig atmosfär.",
+        image: TilLuft
+      },
   ];
 
   const features = [
@@ -90,6 +97,9 @@ export default function Home() {
                 key={index}
                 title={service.title}
                 description={service.description}
+                 image={service.image}
+                
+
               />
             ))}
           </div>

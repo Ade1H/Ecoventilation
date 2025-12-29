@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="navbar-brand-content">
           <span className="company-name">Ecoventilation</span>
           <span className="company-tagline mobile-hide-text">
-            Ventilation Service & Installation
+            Ventilation Service & Installationer
           </span>
         </div>
       </Link>

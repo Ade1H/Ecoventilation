@@ -25,6 +25,27 @@ export default function About() {
       <p>
         Vi på Ecoview har lång erfarenhet utav ventilations underhåll inom den privata sektorn. Vi arbetar med all sorts ventilationsrengöring för villor och radhus, som IMkanal, frånluftsventilation, FTX och luftvärmepumpar. Vi erbjuder även serviceavtal som absolut inte är bindande men kan vara skönt att ha. Då håller vi reda på intervallerna åt er och kontaktar er när det börjar bli dax.
       </p>
+
+      
+<div className="values-section">
+  <h2>Våra värderingar</h2>
+  <div className="values-grid">
+    <div className="value-card">
+      <h3>Kvalitet</h3>
+      <p>Vi levererar alltid högsta möjliga kvalitet på varje uppdrag.</p>
+    </div>
+    <div className="value-card">
+      <h3>Hållbarhet</h3>
+      <p>Vi arbetar för en mer energieffektiv och miljövänlig framtid.</p>
+    </div>
+    <div className="value-card">
+      <h3> Pålitlighet</h3>
+      <p>Vi är här för våra kunder, när de behöver oss som mest.</p>
+    </div>
+  </div>
+</div>
+
+
     </div>
   );
 }
