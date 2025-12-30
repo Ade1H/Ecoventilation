@@ -2,7 +2,8 @@
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- FIXED: Changed from absolute path to relative path -->
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eco Ventilation - Professionell service för ditt hem</title>
     
@@ -20,11 +21,11 @@
     <meta property="og:description" content="Expertis inom ventilation, avlopp och hemunderhåll. Anlita en redan idag!">
     <meta property="og:type" content="website">
     
-    <!-- Favicon alternatives -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- FIXED: Changed favicon paths from absolute to relative -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
     
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#006B5D">
@@ -55,7 +56,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- FIXED: Removed the manual script tag. Vite will auto-inject the correct one during build. -->
     
     <!-- Inline critical CSS for faster initial paint -->
     <style>
